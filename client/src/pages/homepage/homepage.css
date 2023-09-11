@@ -16,11 +16,10 @@
 
 .navbarItems{
     width: 100%;
-    max-width: 1024px;
+    padding: 1px 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #bcc99a;
 }
 
 .homeList{
@@ -37,6 +36,7 @@
     transition: all .55s ease;
     cursor: pointer;
     font-family: 'Noto Sans Cypro Minoan', sans-serif;
+    text-decoration: none;
 }
 
 .homeList a:hover{
@@ -60,7 +60,7 @@
     font-family: 'Noto Sans Cypro Minoan', sans-serif;
     color: white;
     text-decoration: none;
-}
+}  
 
 .logoTittle{
     display: flex;
@@ -69,6 +69,138 @@
 }
 
 .sol{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 60px;
 }
+
+
+.homeContent{
+    width: 100%;
+    display: flex;
+    min-height: 80vh;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeItems{
+    width: 100%;
+    padding: 1px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentText{
+    float: right;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texts h1{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: 'Noto Sans Cypro Minoan', sans-serif;
+}
+
+.texts h2{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 40px;
+}
+
+.texts h3{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 40px;
+}
+
+.contentImg{
+    float: left;
+    display: flex;
+}
+
+.contentImg img{
+    width: 500px;
+    height: auto;
+}
+
+.comenzarButton{
+    position: absolute;
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #338033;
+    background: transparent;
+    color: white;
+    border-radius: 4px;
+    transition: .6s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+button:focus{
+    outline: none;
+}
+
+button:before{
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, .5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5s;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+}
+
+button:after{
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, .2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: .5s;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg);
+}
+
+button:hover{
+    background: #338033;
+    cursor: pointer;
+}
+
+
+button:hover:before{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+}
+
+button:hover:after{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+}
+
+
+
+
+
+
+
+
