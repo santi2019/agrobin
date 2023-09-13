@@ -122,10 +122,40 @@
     margin-bottom: 40px;
 }
 
+.texts {
+    position: relative;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideAndFade 2s ease-in-out forwards;
+  }
+  
+  @keyframes slideAndFade {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
 .contentImg{
     float: left;
     display: flex;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
 }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 .contentImg img{
     width: 500px;
@@ -145,6 +175,9 @@
     transition: .6s;
     cursor: pointer;
     overflow: hidden;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Noto Sans Cypro Minoan', sans-serif;
 }
 
 button:focus{
@@ -198,9 +231,106 @@ button:hover:after{
 }
 
 
+.homeAbout{
+    display: flex;
+    margin-top: 5%;
+    padding: 1px 9%;
+}
+
+.hText{
+    text-align: left;
+    width: 50%;
+    padding-right: 10px;
+}
+
+.content{
+    float: left;
+    text-align: left;
+    padding: 10px;
+    box-shadow: 0px 3px 15px 0px rgba(0,36,0,0.50);
+}
+
+.hText p {
+    padding-bottom: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Noto Sans Cypro Minoan', sans-serif;
+    color: white;
+}
+
+.hText h2{
+    color: white;
+    font-size: 35px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
 
 
+.hImg{
+    float: right;
+    width: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.image{
+    width: 410px;
+    height: 400px;
+    border: 5px solid wheat;
+}
+
+
+.homeAbout2{
+    display: flex;
+    margin-top: 5%;
+    padding: 1px 9%;
+}
+
+.hText2{
+    text-align: left;
+    width: 50%;
+    padding-left: 10px;
+}
+
+.content2{
+    float: right;
+    text-align: left;
+    padding: 10px;
+    box-shadow: 0px 3px 15px 0px rgba(0,36,0,0.50);
+}
+
+.hText2 p {
+    padding-bottom: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Noto Sans Cypro Minoan', sans-serif;
+    color: white;
+}
+
+.hText2 h2{
+    color: white;
+    font-size: 35px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.hImg2{
+    float: left;
+    width: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image2{
+    width: 410px;
+    height: 400px;
+    border: 5px solid wheat;
+}
 
 
 
