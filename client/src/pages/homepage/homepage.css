@@ -1,14 +1,22 @@
+/* Container de toda la pagina */
 .homeContainer{
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.53%, #133917 75.52%);
     position: relative;
     display: grid;
+    background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.53%, #133917 75.52%);
     border: none !important;
 }
 
+
+
+/* Navbar:
+    - Titulo
+    - Lista
+*/
 .homeNavbar{
+    width: 100%;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -25,6 +33,23 @@
 .homeList{
     display: flex;
     list-style-type: none;
+}
+
+@keyframes homeList {
+    0% {
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  
+.homeList {
+    opacity: 0;
+    translate: 0 30px;
+    animation-name: appear;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
 }
 
 .homeList a{
@@ -62,18 +87,30 @@
     text-decoration: none;
 }  
 
-.logoTittle{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@keyframes appear {
+    0% {
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  
+.appear {
+    opacity: 0;
+    translate: 0 30px;
+    animation-name: appear;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
 }
 
-.sol{
-    width: 70px;
-    height: 60px;
-}
 
 
+/* Contenido inicial:
+    - Titulos iniciales
+    - Boton de comenzar
+    - Logo de AgroBIN
+*/
 .homeContent{
     width: 100%;
     display: flex;
@@ -126,19 +163,19 @@
     position: relative;
     opacity: 0;
     transform: translateX(-100%);
-    animation: slideAndFade 2s ease-in-out forwards;
-  }
+    animation: slideAndFade 1s ease-in-out forwards;
+}
   
-  @keyframes slideAndFade {
+@keyframes slideAndFade {
     0% {
-      transform: translateX(-100%);
-      opacity: 0;
+        transform: translateX(-10%);
+        opacity: 0;
     }
     100% {
-      transform: translateX(0);
-      opacity: 1;
+        transform: translateX(0);
+        opacity: 1;
     }
-  }
+}
 
 .contentImg{
     float: left;
@@ -148,6 +185,11 @@
     animation: fadeIn 2s ease-in-out forwards;
 }
 
+.contentImg img{
+    width: 500px;
+    height: auto;
+}
+
 @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -155,11 +197,6 @@
     100% {
       opacity: 1;
     }
-  }
-
-.contentImg img{
-    width: 500px;
-    height: auto;
 }
 
 .comenzarButton{
@@ -180,11 +217,11 @@
     font-family: 'Noto Sans Cypro Minoan', sans-serif;
 }
 
-button:focus{
+.comenzarButton:focus{
     outline: none;
 }
 
-button:before{
+.comenzarButton:before{
     content: '';
     display: block;
     position: absolute;
@@ -198,7 +235,7 @@ button:before{
     transform: translateX(-130px) skewX(-15deg);
 }
 
-button:after{
+.comenzarButton:after{
     content: '';
     display: block;
     position: absolute;
@@ -212,25 +249,27 @@ button:after{
     transform: translateX(-100px) skewX(-15deg);
 }
 
-button:hover{
+.comenzarButton:hover{
     background: #338033;
     cursor: pointer;
 }
 
-
-button:hover:before{
+.comenzarButton:hover:before{
     transform: translateX(300px) skewX(-15deg);
     opacity: .6;
     transition: .7s;
 }
 
-button:hover:after{
+.comenzarButton:hover:after{
     transform: translateX(300px) skewX(-15deg);
     opacity: 1;
     transition: .7s;
 }
 
 
+/* Acerca de:
+
+*/
 .homeAbout{
     display: flex;
     margin-top: 5%;
@@ -334,3 +373,42 @@ button:hover:after{
 
 
 
+/* Scroll-button */
+.scroll-top-button{
+    position: fixed;
+    right: 20px;
+    bottom: 36px;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: .55s;
+}
+
+.scroll-top-button{
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.scroll-top-button:hover, .scroll-top-button:focus, .scroll-top-button:active{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.arrowIcon{
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}

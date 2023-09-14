@@ -1,23 +1,38 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars} from "@fortawesome/free-solid-svg-icons";
-import HomeAbout from "../../components/homeAbout/HomeAbout";
-
-
-//<img src={logo} className="sol" />
+import { faArrowUp, faBars} from "@fortawesome/free-solid-svg-icons";
 
 const Homepage = () => {
+
+const [scrollVisible, setScrollVisible] = useState(false);
+
+const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    setScrollVisible(scrollPosition > 0);
+};
+
+useEffect(() => {
+   window.addEventListener("scroll", handleScroll);
+   return () => {
+      window.removeEventListener("scroll", handleScroll); 
+    };
+}, []);
+
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
     return(
         <div>
             <div className="homeContainer">
                
                 <div className="homeNavbar">
                     <div className="navbarItems">
-                        <div className="logoTittle">
+                        <div className="logoTittle" className="appear">
                             <h1 className="homeLogo"><a href="/">AgroBIN</a></h1>
                         </div>
-                        <ul className="homeList">
+                        <ul className="homeList" style={{ animationDelay: "0.2s" }}>
                             <li><a href="/">Inicio</a></li>
                             <li><a href="#AcercaDe">Acerca de</a></li>
                             <li><a>Contacto</a></li>
@@ -44,6 +59,12 @@ const Homepage = () => {
                         </div>
                     </div>
                 </div>
+
+
+                {scrollVisible && ( <button id="scroll-top-button" onClick={scrollToTop} className="scroll-top-button" type="button">
+                    <FontAwesomeIcon className="arrowIcon" icon={faArrowUp}/>
+                </button> )}
+
 
                 <div className="homeAbout" id="AcercaDe">
                     <div className="hText">
