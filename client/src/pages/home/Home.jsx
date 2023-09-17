@@ -1,0 +1,50 @@
+import React, { useState, useEffect} from "react";
+import "./home.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp, faBars} from "@fortawesome/free-solid-svg-icons";
+import HomeNavbar from "../../components/homeNavbar/HomeNavbar";
+import HomeHeader from "../../components/homeHeader/HomeHeader";
+
+const Home = () => {
+
+const [scrollVisible, setScrollVisible] = useState(false);
+
+const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    setScrollVisible(scrollPosition > 0);
+};
+
+useEffect(() => {
+   window.addEventListener("scroll", handleScroll);
+   return () => {
+      window.removeEventListener("scroll", handleScroll); 
+    };
+}, []);
+
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+    return(
+        <div className="homeContainer">    
+            <HomeNavbar />
+            <HomeHeader />
+            
+                                       
+        </div>
+       
+    )
+}
+
+/*
+
+import HomeAbout from "../../components/homeAbout/HomeAbout";
+<HomeAbout />
+
+ {scrollVisible && ( <button id="scroll-top-button" onClick={scrollToTop} className="scroll-top-button" type="button">
+                    <FontAwesomeIcon className="arrowIcon" icon={faArrowUp}/> fa-sort.up
+                </button> )}
+
+*/
+
+export default Home

@@ -1,13 +1,13 @@
 import React, {useLayoutEffect} from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Homepage from './pages/homepage/Homepage';
+import Home from './pages/home/Home';
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage/>}/>
+        <Route path="/" element={<Home/>}/>
       </Routes>
     </BrowserRouter>
   );
