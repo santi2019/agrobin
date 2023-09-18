@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import "./home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp, faBars} from "@fortawesome/free-solid-svg-icons";
+import { faArrowUp} from "@fortawesome/free-solid-svg-icons";
 import HomeNavbar from "../../components/homeNavbar/HomeNavbar";
 import HomeHeader from "../../components/homeHeader/HomeHeader";
 
@@ -29,10 +29,11 @@ const scrollToTop = () => {
         <div className="homeContainer">    
             <HomeNavbar />
             <HomeHeader />
+            {scrollVisible && ( <button id="scroll-top-button" onClick={scrollToTop} className="scroll-top-button" type="button">
+                    <FontAwesomeIcon className="arrowIcon" icon={faArrowUp}/></button> )}
             
                                        
         </div>
-       
     )
 }
 

@@ -3,7 +3,7 @@
     height: 100px;
     display: flex;
     justify-content: center;
-    background: transparent;
+    box-shadow: 0px 3px 15px 0px rgba(0,36,0,0.50);
 }
 
 .navbarItems{
@@ -39,7 +39,7 @@
     }
 }
 
-.navList{
+#navList{
     display: flex;
     list-style-type: none;
     opacity: 0;
@@ -59,7 +59,7 @@
     }
   }
 
-.navList a{
+#navList a{
     color: #fff;
     margin-left: 60px;
     font-size: 15px;
@@ -71,17 +71,21 @@
     text-decoration: none;
 }
 
-.navList a:hover{
+#navList a:hover{
     border-bottom: 2px solid white;
     transition: all .55s ease;
 }
 
-.navIcon{
+#navIcon{
     color: #fff;
     font-size: 30px;
     z-index: 10001;
     cursor: pointer;
     display: none;
+}
+
+#navIcon i{
+    align-items: center;
 }
 
 
@@ -94,35 +98,55 @@
     }
 }
 
-@media (max-width:990px){
-    .navIcon{
-        display: block;
+@media screen and (max-width:990px){
+    .homeNavbar{
+        z-index: 1001;
+        position: sticky;
+        top: 0;
+        background-color: #387442;
     }
-    .navList{
-        position: absolute;
-        top: 100%;
-        right: -100%;
-        width: 300px;
-        height: 400vh;
-        background: #4d9559;
+    #navList{
         display: flex;
-        align-items: center;
         flex-direction: column;
-        padding: 50px 20px;
+        align-items: flex-start;
+        justify-content: flex-start;
         transition: all .55s ease;
+        position: fixed;
+        top: 100px;
+        right: -300px;
+        width: 250px;
+        height: 100vh;
+        background: #4d9559;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 40px 0 0 10px;
+        transition: all 0.55s ease-in-out;
     }
-    .navList a{
-        margin-left: 0;
+    #navList.active{
+        right: 0px;
+    }
+    #navList li{
+        margin-bottom: 15px;
+    }
+    #navList a{
+        margin-left: 60px;
+    }
+    #navIcon{
         display: block;
-        margin: 7px 0;
     }
-    .navList.open{
-        right: 0;
+    #navIcon i{
+        font-size: 24px;
+        cursor: pointer;
     }
 }
 
 @media (max-width: 680px){
     .navLogo{
         font-size: 25px;
+    }
+    #navList{
+        width: 200px;
+    }
+    #navList a{
+        margin-left: 50px;
     }
 }
