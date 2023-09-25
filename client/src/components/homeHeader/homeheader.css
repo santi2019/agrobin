@@ -128,9 +128,9 @@
 
 /*Imagen*/
 .headerImg{
-    float: left;
     display: flex;
     position: relative;
+    float: left;
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
 }
@@ -151,19 +151,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Responsive settings*/
 @media (max-width:1460px){
     .homeHeader{
-        
         transition: .2s;
     }
 }
 
 @media (max-width: 1340px){
-    .headerImg img{
-        width: 400px;
-        height: auto;
-    }
     .texts h1{
         font-size: 27px;
         margin: 0 0 30px;
@@ -175,6 +187,10 @@
     .texts h3{
         font-size: 15px;
         margin-bottom: 25px;
+    }
+    .headerImg img{
+        width: 400px;
+        height: auto;
     }
 }
 
@@ -220,5 +236,9 @@
     .startButton{
         width: 100px;
         font-size: 10px;
+        border: 1px solid #3f973f;
+    }
+    .startButton:hover{
+        background: #3f973f;
     }
 }

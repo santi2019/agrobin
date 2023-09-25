@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp} from "@fortawesome/free-solid-svg-icons";
 import HomeNavbar from "../../components/homeNavbar/HomeNavbar";
 import HomeHeader from "../../components/homeHeader/HomeHeader";
+import HomeAbout from "../../components/homeAbout/HomeAbout";
 
 const Home = () => {
 
@@ -31,21 +32,13 @@ const scrollToTop = () => {
             <HomeHeader />
             {scrollVisible && ( <button id="scroll-top-button" onClick={scrollToTop} className="scroll-top-button" type="button">
                     <FontAwesomeIcon className="arrowIcon" icon={faArrowUp}/></button> )}
-            
+            <div className="homeA">
+                <HomeAbout />
+            </div>
                                        
         </div>
     )
 }
 
-/*
-
-import HomeAbout from "../../components/homeAbout/HomeAbout";
-<HomeAbout />
-
- {scrollVisible && ( <button id="scroll-top-button" onClick={scrollToTop} className="scroll-top-button" type="button">
-                    <FontAwesomeIcon className="arrowIcon" icon={faArrowUp}/> fa-sort.up
-                </button> )}
-
-*/
 
 export default Home
